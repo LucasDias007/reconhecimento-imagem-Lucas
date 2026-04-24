@@ -1,19 +1,33 @@
-def is_prime(n: int) -> bool:
-    """Retorna True se n for número primo, caso contrário False."""
-    if n <= 1:
+def is_prime(number: int) -> bool:
+    """
+    Check if a given integer is a prime number.
+
+    A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+    Args:
+        number (int): The integer to check.
+
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """
+    if number <= 1:
         return False
-    if n <= 3:
+    if number <= 3:
         return True
-    if n % 2 == 0 or n % 3 == 0:
+    if number % 2 == 0 or number % 3 == 0:
         return False
+
+    # Check for factors up to sqrt(number)
     i = 5
-    while i * i <= n:
-        if n % i == 0 or n % (i + 2) == 0:
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
             return False
         i += 6
+
     return True
 
-if __name__ == '__main__':
-    exemplos = [1, 2, 3, 4, 17, 18, 19, 20]
-    for valor in exemplos:
-        print(f"{valor} -> {is_prime(valor)}")
+if __name__ == "__main__":
+    test_cases = [1, 2, 3, 4, 17, 18, 19, 20]
+    for value in test_cases:
+        result = is_prime(value)
+        print(f"{value} -> {result}")

@@ -1,47 +1,47 @@
-# Explicação do Código `num_primos.py`
+# ExplicaÃ§Ã£o do CÃ³digo `num_primos.py`
 
-Este arquivo define uma função `is_prime(n)` que verifica se um número inteiro `n` é primo.
+Este arquivo define uma funÃ§Ã£o `is_prime(number)` que verifica se um nÃºmero inteiro `number` Ã© primo.
 
 ## Como funciona
 
-1. `if n <= 1:`
-   - Números menores ou iguais a 1 não são primos.
+1. `if number <= 1:`
+   - NÃºmeros menores ou iguais a 1 nÃ£o sÃ£o primos.
    - Retorna `False`.
 
-2. `if n <= 3:`
-   - Os números 2 e 3 são primos.
+2. `if number <= 3:`
+   - Os nÃºmeros 2 e 3 sÃ£o primos.
    - Retorna `True`.
 
-3. `if n % 2 == 0 or n % 3 == 0:`
-   - Elimina divisíveis por 2 ou por 3.
-   - Retorna `False` para múltiplos de 2 ou 3.
+3. `if number % 2 == 0 or number % 3 == 0:`
+   - Elimina divisÃ­veis por 2 ou por 3.
+   - Retorna `False` para mÃºltiplos de 2 ou 3.
 
 4. `i = 5`
-   - Usa uma técnica otimizada que testa apenas números na forma `6k - 1` e `6k + 1`.
+   - Usa uma tÃ©cnica otimizada que testa apenas nÃºmeros na forma `6k - 1` e `6k + 1`.
 
-5. `while i * i <= n:`
-   - Verifica divisores até a raiz quadrada de `n`.
-   - Isso é suficiente porque qualquer fator maior que a raiz quadrada teria um par menor.
+5. `while i * i <= number:`
+   - Verifica divisores atÃ© a raiz quadrada de `number`.
+   - Isso Ã© suficiente porque qualquer fator maior que a raiz quadrada teria um par menor.
 
-6. `if n % i == 0 or n % (i + 2) == 0:`
+6. `if number % i == 0 or number % (i + 2) == 0:`
    - Testa `i` e `i + 2` (ex: 5 e 7, 11 e 13, etc.).
-   - Se `n` for divisível por qualquer um, retorna `False`.
+   - Se `number` for divisÃ­vel por qualquer um, retorna `False`.
 
 7. `i += 6`
-   - Avança para o próximo par de candidatos de teste.
+   - AvanÃ§a para o prÃ³ximo par de candidatos de teste.
 
 8. `return True`
-   - Se nenhum divisor for encontrado, `n` é primo.
+   - Se nenhum divisor for encontrado, `number` Ã© primo.
 
-## Execução direta do arquivo
+## ExecuÃ§Ã£o direta do arquivo
 
-Quando o arquivo é executado como programa principal (`python num_primos.py`), ele testa uma lista de exemplos:
+Quando o arquivo Ã© executado como programa principal (`python num_primos.py`), ele testa uma lista de exemplos:
 
 - `[1, 2, 3, 4, 17, 18, 19, 20]`
 
-E imprime o resultado de `is_prime(valor)` para cada valor.
+E imprime o resultado de `is_prime(value)` para cada valor.
 
-## Observações
+## ObservaÃ§Ãµes
 
-- O algoritmo é eficiente para números moderados, porque evita testar todos os números e usa apenas verificações até a raiz quadrada.
-- A função retorna sempre um valor booleano (`True` ou `False`).
+- O algoritmo Ã© eficiente para nÃºmeros moderados, porque evita testar todos os nÃºmeros e usa apenas verificaÃ§Ãµes atÃ© a raiz quadrada.
+- A funÃ§Ã£o retorna sempre um valor booleano (`True` ou `False`).
